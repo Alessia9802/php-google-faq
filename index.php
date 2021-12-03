@@ -13,12 +13,14 @@ $array = [
     ]
     ];
 
-    for ($i = 0; $i < count($array); $i++){
+    /* for ($i = 0; $i < count($array); $i++){
         $element = $array[$i];
         echo $element;
-    }
+    } */
 
-    var_dump($array[$i]);
+    echo ($array[0]);
+
+    /* var_dump($array[0]); */
 
 ?>
 
