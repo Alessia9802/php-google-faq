@@ -1,7 +1,24 @@
 <?php
 
 $header = "Privacy & Termini"; 
-$menu = ["Introduzione", "Norme sulla privacy", "Termini di servizio", "Tecnologie", "Domande frequenti"];
+$menu = [
+    [
+        "title_1" => "Introduzione",
+    ],
+    [
+        "title_2" => "Norme sulla privacy",
+    ],
+    [
+        "title_3" => "Termini di servizio",
+    ],
+    [
+        "title_4" => "Tecnologie",
+    ],
+    [
+        "title_5" => "Domande frequenti"
+    ]
+
+    ];
 
 
 
@@ -72,6 +89,10 @@ $array = [
            display: flex;
            border-bottom: 2px solid #D3D3D3;
        }
+
+       .menu p {
+           padding: 1rem;
+       }
        .menu_item{
            padding: .8rem 1rem;
        }
@@ -104,21 +125,16 @@ $array = [
         </div>
         
         <div class="menu">
-            <div class="menu_item">
-                <?php echo($menu[0]); ?>
-            </div>
-            <div class="menu_item">
-                  <?php echo($menu[1]); ?>
-            </div>
-            <div class="menu_item">
-                <?php echo($menu[2]); ?>
-            </div>
-            <div class="menu_item">
-                 <?php echo($menu[3]); ?>
-            </div>
-            <div class="menu_item blue">
-                <?php echo($menu[4]); ?>
-            </div>
+            <?php for ($i = 0; $i < count($menu); $i++) :
+      $menu_item = $menu[$i];
+       
+    ?>
+
+    <p><?php echo $menu_item['title_1'] . ' ' . $menu_item['title_2'] . ' ' . $menu_item['title_3'] . ' ' . $menu_item['title_4'] . '  ' . 
+    $menu_item['title_5'] ?> 
+    </p>
+     <?php endfor; ?>
+           
         </div>
        
     </div>
